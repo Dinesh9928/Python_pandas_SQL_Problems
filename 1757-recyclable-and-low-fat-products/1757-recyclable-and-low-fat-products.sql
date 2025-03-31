@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-
-SELECT product_id FROM products WHERE low_fats = 'Y'
-INTERSECT
-SELECT product_id FROM products WHERE recyclable = 'Y';
+select product_id 
+from Products 
+where
+low_fats = 'Y' && recyclable = 'Y';
