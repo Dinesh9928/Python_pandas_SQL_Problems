@@ -1,10 +1,11 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        freq = [0]* 1000
-        for i in range(0, len(nums)):
-            if(freq[nums[i]] != 0):
-                return True
-            else:
-                freq[nums[i]] = 1
-        return False
+        hashset = set(nums)
+        return len(hashset) < len(nums)
+        # freq = set() # using set
+        # for num in nums: 
+        #     if num in freq: 
+        #         return True
+        #     freq.add(num)
+        # return False
         
