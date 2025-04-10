@@ -1,6 +1,8 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         st = []
+        if(len(s)<2):
+            return False
         for i in s:
             if (i == "(" or i== "[" or i == "{"):
                 st.append(i)
