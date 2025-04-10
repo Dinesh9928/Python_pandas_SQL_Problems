@@ -1,18 +1,18 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
-        leftmax = [0]* len(height)
-        rightmax = [0]* len(height)
-
-        for i in range(1, len(height)):
-            leftmax[i] = max(leftmax[i-1], height[i-1])
-        for i in range(len(height)-2, -1, -1):
-            rightmax[i] = max(rightmax[i+1], height[i+1])
-        total = 0
+        l,r = 0, len(height)-1
+        lmax, rmax = 0, 0
+        res = 0
         
-        for i in range(len(height)):
-            water = min(leftmax[i], rightmax[i]) - height[i]
-            if(water > 0):
-                total += water
+        while(l<r):
+            lmax = max(lmax, height[l])
+            rmax = max(rmax, height[r])
+            if(lmax<rmax):
+                res += lmax - height[l]
+                l +=1
+            else:
+                res += rmax - height[r]
+                r -=1 
 
-        return total 
+        return res 
         
