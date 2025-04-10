@@ -1,7 +1,5 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        if(len(s) < 2):
-             return False
         st = []
         for i in s:
             if (i == "(" or i== "[" or i == "{"):
